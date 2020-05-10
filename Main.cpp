@@ -16,7 +16,7 @@ int main() {
 		"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
 		"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
 		"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
-		"A5,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy,Dummy,SOFTWARE"
+		"A5,Blake,Lambert,blamb52@wgu.edu,29,13,23,17,SOFTWARE"
 	};
 
 	int numStudents = 5;
@@ -33,12 +33,12 @@ int main() {
     
     classRoster->printAll();
 
-	/*
+	
 	cout << endl;
 
 	classRoster->printInvalidEmails();
 
-	cout << endl;
+	/*cout << endl;
 
 	for (int i = 0; i < numStudents; i++) {
 		classRoster->printAverageDaysInCourse(classRoster->getStudentAt(i)->getStudentID());
@@ -50,8 +50,8 @@ int main() {
 
 	classRoster->printAll();
 
-	classRoster->remove("A3");
-	*/
+	classRoster->remove("A3");*/
+	
     
 	system("pause");
 

@@ -27,36 +27,36 @@ void Roster::parseAndAdd(string row) {
 	string studentID = row.substr(0, rLimit);
 
 	int lLimit = rLimit + 1;
-	rLimit = row.find(",");
+	rLimit = row.find(",", lLimit);
 	string firstName = row.substr(lLimit, rLimit - lLimit);
 
 	lLimit = rLimit + 1;
-	rLimit = row.find(",");
+	rLimit = row.find(",", lLimit);
 	string lastName = row.substr(lLimit, rLimit - lLimit);
 
 	lLimit = rLimit + 1;
-	rLimit = row.find(",");
+	rLimit = row.find(",", lLimit);
 	string emailAddress = row.substr(lLimit, rLimit - lLimit);
 
 	lLimit = rLimit + 1;
-	rLimit = row.find(",");
+	rLimit = row.find(",", lLimit);
 	string tempAge = row.substr(lLimit, rLimit - lLimit);
 	int age = stoi(tempAge);
 
 	lLimit = rLimit + 1;
-	rLimit = row.find(",");
+	rLimit = row.find(",", lLimit);
 	int daysInCourse1 = stoi(row.substr(lLimit, rLimit - lLimit));
 
 	lLimit = rLimit + 1;
-	rLimit = row.find(",");
+	rLimit = row.find(",", lLimit);
 	int daysInCourse2 = stoi(row.substr(lLimit, rLimit - lLimit));
 	
 	lLimit = rLimit + 1;
-	rLimit = row.find(",");
+	rLimit = row.find(",", lLimit);
 	int daysInCourse3 = stoi(row.substr(lLimit, rLimit - lLimit));
 
 	lLimit = rLimit + 1;
-	rLimit = row.find(",");
+	rLimit = row.find(",", lLimit);
 	DegreeProgram degreeProgram;
 	string degreeStr = row.substr(lLimit, rLimit - lLimit);
 	if (degreeStr == "NETWORK") {
@@ -114,7 +114,7 @@ void Roster::printAverageDaysInCourse(string studentID) {
 void Roster::printInvalidEmails() {
 	for (int i = 0; i < 5; ++i) {
 		string tempEmail = classRosterArray[i]->getEmailAddress();
-		if ((tempEmail.find(" ") == string::npos) || (tempEmail.find("@") == string::npos || tempEmail.find(".") != string::npos)) {
+		if ((tempEmail.find(" ") != string::npos) || (tempEmail.find("@") != string::npos || tempEmail.find(".") == string::npos)) {
 			cout << tempEmail << endl;
 		}
 	}

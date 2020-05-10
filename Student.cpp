@@ -90,10 +90,10 @@ void Student::setDegree(DegreeProgram degreeProgram) {
 }
 
 void Student::print() {
-	std::cout << getStudentID() << "\t" << getFirstName() << "\t" << getLastName() << "\t" << getAge() << "\t";
+	std::cout << getStudentID() << "\t" << getFirstName() << "\t" << getLastName() << "\t" << getEmailAddress() << "\t" << getAge() << "\t";
 	int* day = getDaysInCourse(); 
 	cout << day[0] << "\t" << day[1] << "\t" << day[2] << "\t";
-	cout << degreeProgramStr[(int)getDegree()];
+	cout << degreeProgramStr[(int)getDegree()] << endl;
 }
 
 Student::~Student() {
