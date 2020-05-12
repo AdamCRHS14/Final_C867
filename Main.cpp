@@ -27,32 +27,45 @@ int main() {
 	cout << "C867 Scrpiting and Programming Applications" << endl;
 	cout << "Written in C++ by Blake Lambert, Student ID: " << endl;
 
+	cout << endl;
+
 	for (int i = 0; i < numStudents; i++) {
 		classRoster->parseAndAdd(studentData[i]);
 	}
     
+	cout << "Student Roster:" << endl;
     classRoster->printAll();
 
 	
 	cout << endl;
 
+	cout << "Invalid student emails:" << endl;
 	classRoster->printInvalidEmails();
 
-	/*cout << endl;
+	cout << endl;
 
+	cout << "Average days in course per student:" << endl;
 	for (int i = 0; i < numStudents; i++) {
 		classRoster->printAverageDaysInCourse(classRoster->getStudentAt(i)->getStudentID());
 	}
 
+	cout << endl;
+
+	cout << "Students in the software degree program: " << endl;
 	classRoster->printByDegreeProgram(DegreeProgram::SOFTWARE);
+
+	cout << endl;
 
 	classRoster->remove("A3");
 
+	cout << endl;
+
 	classRoster->printAll();
 
-	classRoster->remove("A3");*/
+	cout << endl;
+
+	classRoster->remove("A3");
 	
-    
 	system("pause");
 
 	return 0;

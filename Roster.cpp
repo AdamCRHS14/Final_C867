@@ -84,10 +84,9 @@ bool Roster::remove(string studentID) {
 			classRosterArray[i] = classRosterArray[index];
 			index--;
 		}
-		
-		if(!found){
-			cout << "No student found." << endl;
-		}
+	}
+	if (!found) {
+		cout << "Student with ID " << studentID << " not found." << endl;
 	}
 	return found;
 }
@@ -114,7 +113,7 @@ void Roster::printAverageDaysInCourse(string studentID) {
 void Roster::printInvalidEmails() {
 	for (int i = 0; i < 5; ++i) {
 		string tempEmail = classRosterArray[i]->getEmailAddress();
-		if ((tempEmail.find(" ") != string::npos) || (tempEmail.find("@") != string::npos || tempEmail.find(".") == string::npos)) {
+		if ((tempEmail.find("@") == string::npos || tempEmail.find(".") == string::npos) || (tempEmail.find(" ") != string::npos)) {
 			cout << tempEmail << endl;
 		}
 	}
